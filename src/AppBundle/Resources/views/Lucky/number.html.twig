@@ -2,6 +2,23 @@
 
 {% block title %}AppBundle:Lucky:number{% endblock %}
 
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
 {% block body %}
+	
+	{% for type, flash_messages in app.session.flashBag.all %}
+		{% for flash_message in flash_messages %}
+			<div class="flash-{{ type }}">
+				{{ type }}: {{ flash_message }}
+			</div>
+		{% endfor %}
+	{% endfor %}
+	
+	{{ url('app_lucky_number') }} xxx
+	
 <h1>Welcome to the {{ number }} page</h1>
+
+	{{ absolute_url(asset('images/logo.png')) }}
 {% endblock %}
