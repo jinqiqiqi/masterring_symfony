@@ -1,3 +1,11 @@
+app_workspace:
+    resource: "@AppBundle/Controller/WorkspaceController.php"
+    type:     annotation
+
+app_project:
+    resource: "@AppBundle/Controller/ProjectController.php"
+    type:     annotation
+
 blog:
     resource: "@BlogBundle/Controller/"
     type:     annotation
