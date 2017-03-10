@@ -6,3 +6,9 @@ default:
             goutte: ~
             selenium2: ~
             base_url: http://localhost:8000/app_dev.php
+            sessions:
+                firefox_linux:
+                    selenium2:
+                        browser: "firefox"
+                        wd_host: http://localhost:4444/wd/hub
+                        capabilities: { "platform": "Linux", "browser": "firefox", "version": ""}

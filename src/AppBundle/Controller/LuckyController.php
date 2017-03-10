@@ -32,6 +32,7 @@ class LuckyController extends Controller
             '==> Your changes were saved.'
         );
 
+
         return $this->render('AppBundle:Lucky:number.html.twig', array(
             'number' => $number
         ));
