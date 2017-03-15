@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}DefaultController:about page{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	{% if user %}
+		<h1>User Profile</h1>
+        <div><strong>Name: </strong> {{ user.name | capitalize }}</div>
+        <div><strong>Email: </strong> {{ user.email }}</div>
+        <div><strong>Bio: </strong> {{ user.bio }}</div>
+	{% else %}
+		
+		mava is a web app for task management and team collabration.
+	{% endif %}
+
+    {% for type, flash_messages in app.session.flashBag.all %}
+        {% for flash_message in flash_messages %}
+            <div class="flash-{{ type }}">
+                {{ type }}: {{ flash_message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+
+{% endblock %}

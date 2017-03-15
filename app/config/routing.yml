@@ -6,11 +6,6 @@ app_project:
     resource: "@AppBundle/Controller/ProjectController.php"
     type:     annotation
 
-blog:
-    resource: "@BlogBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

@@ -25,6 +25,12 @@ implements OrderedFixtureInterface {
         $user2->setBio('He is a cool guy too');
         $user2->setEmail('jack@mava.info');
         $manager->persist($user2);
+
+        $user3 = new User();
+        $user3->setName('EricKing');
+        $user3->setBio('He is a cool guy, 3nd.');
+        $user3->setEmail('ek@mava.info');
+        $manager->persist($user3);
         
         $manager->flush();
 

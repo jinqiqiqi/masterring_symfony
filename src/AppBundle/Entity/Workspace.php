@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Workspace
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=45, nullable=true)
@@ -35,17 +26,16 @@ class Workspace
      */
     private $description;
 
-
-
     /**
-     * Get id
+     * @var integer
      *
-     * @return integer
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $id;
+
+
 
     /**
      * Set name
@@ -93,5 +83,15 @@ class Workspace
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

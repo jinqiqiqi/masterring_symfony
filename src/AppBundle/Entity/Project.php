@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Project
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=45, nullable=true)
@@ -43,6 +34,15 @@ class Project
     private $dueDate;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var \AppBundle\Entity\Workspace
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Workspace")
@@ -53,16 +53,6 @@ class Project
     private $workspace;
 
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set title
@@ -134,6 +124,16 @@ class Project
     public function getDueDate()
     {
         return $this->dueDate;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**

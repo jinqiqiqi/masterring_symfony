@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Task
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=45, nullable=false)
@@ -50,14 +41,13 @@ class Task
     private $attachment;
 
     /**
-     * @var \AppBundle\Entity\Project
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Project")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="project_id", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $project;
+    private $id;
 
     /**
      * @var \AppBundle\Entity\User
@@ -69,17 +59,17 @@ class Task
      */
     private $user;
 
-
-
     /**
-     * Get id
+     * @var \AppBundle\Entity\Project
      *
-     * @return integer
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Project")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="project_id", referencedColumnName="id")
+     * })
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $project;
+
+
 
     /**
      * Set title
@@ -178,27 +168,13 @@ class Task
     }
 
     /**
-     * Set project
+     * Get id
      *
-     * @param \AppBundle\Entity\Project $project
-     *
-     * @return Task
+     * @return integer
      */
-    public function setProject(\AppBundle\Entity\Project $project = null)
+    public function getId()
     {
-        $this->project = $project;
-
-        return $this;
-    }
-
-    /**
-     * Get project
-     *
-     * @return \AppBundle\Entity\Project
-     */
-    public function getProject()
-    {
-        return $this->project;
+        return $this->id;
     }
 
     /**
@@ -223,5 +199,29 @@ class Task
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set project
+     *
+     * @param \AppBundle\Entity\Project $project
+     *
+     * @return Task
+     */
+    public function setProject(\AppBundle\Entity\Project $project = null)
+    {
+        $this->project = $project;
+
+        return $this;
+    }
+
+    /**
+     * Get project
+     *
+     * @return \AppBundle\Entity\Project
+     */
+    public function getProject()
+    {
+        return $this->project;
     }
 }
