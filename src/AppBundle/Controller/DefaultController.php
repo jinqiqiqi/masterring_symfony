@@ -37,5 +37,23 @@ class DefaultController extends Controller
             'user' => $user,
         ]);
 	}
+
+
+    /**
+     * @Route("/more/{name}", name="more_page", defaults={"name": null})
+     */
+    public function moreAction($name)
+    {
+        $user = null;
+        if ($name) {
+           $user = $this->getDoctrine()->getRepository('AppBundle:User')->findOneBy(['name' => $name]);
+           if (false === $user instanceof User) {
+            throw $this->createNotFoundException('No user named '. $name. ' found!');
+           }
+        }
+        return $this->render('::default/more.html.twig', [
+            'user' => $user
+        ]);
+    }
 }
 
