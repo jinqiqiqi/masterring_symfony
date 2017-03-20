@@ -15,6 +15,12 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
+            // third party bundles
+            new FOS\UserBundle\FOSUserBundle(),
+
+
+            // custom bundles
             new AppBundle\AppBundle(),
         ];
 
@@ -25,6 +31,7 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+            $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
         }
 
         return $bundles;

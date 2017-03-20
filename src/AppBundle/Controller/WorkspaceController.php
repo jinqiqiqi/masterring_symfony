@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Workspace controller.
  *
- * @Route("workspace")
+ * @Route("/dashboard/workspace")
  */
 class WorkspaceController extends Controller
 {

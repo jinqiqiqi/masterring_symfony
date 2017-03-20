@@ -19,3 +19,5 @@
 .ac-php-config.json
 .ac-php-conf.json
 .DS_Store
+
+tests/_output/*

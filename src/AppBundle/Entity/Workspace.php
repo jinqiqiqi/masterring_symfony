@@ -13,20 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Workspace
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=45, nullable=true)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="text", length=255, nullable=true)
-     */
-    private $description;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -35,7 +21,31 @@ class Workspace
      */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=45, nullable=false)
+     */
+    private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", length=255, nullable=false)
+     */
+    private $description;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set name
@@ -83,15 +93,5 @@ class Workspace
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 }
