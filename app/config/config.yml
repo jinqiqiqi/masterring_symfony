@@ -77,3 +77,9 @@ fos_user:
     from_email:
         address: "jinqiqiqi@gmail.com"
         sender_name: "jinqiqiqi"
+        
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
