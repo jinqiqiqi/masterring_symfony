@@ -18,6 +18,7 @@ class AppKernel extends Kernel
 
             // third party bundles
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
 
             // custom bundles
             new AppBundle\AppBundle(),
