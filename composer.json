@@ -23,10 +23,15 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "twig/twig": "^1.0||^2.0",
+        
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "friendsofsymfony/user-bundle": "~2.0@dev",
+        
         "sonata-project/admin-bundle": "^3.14",
-        "sonata-project/doctrine-orm-admin-bundle": "^3.1"
+        "sonata-project/doctrine-orm-admin-bundle": "^3.1",
+        "sonata-project/datagrid-bundle": "2.x-dev",
+        "friendsofsymfony/rest-bundle": "^2.1",
+        "nelmio/api-doc-bundle": "^2.13"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -61,7 +66,7 @@
     },
     "config": {
         "platform": {
-            "php": "5.5.9"
+            "php": "5.6.0"
         }
     },
     "extra": {
