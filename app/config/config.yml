@@ -60,6 +60,7 @@ doctrine:
         auto_mapping: true
         # entity_managers:
         #     default:
+        #         auto_mapping: true
         #         mappings:
         #             ApplicationSonataUserBundle: ~
         #             SonataUserBundle: ~
@@ -79,7 +80,7 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\User
     group:
-        group_class: Sonata\UserBundle\Entity\BaseGroup
+        group_class: AppBundle\Entity\Group
         group_manager: sonata.user.orm.group_manager
     service:
         user_manager: sonata.user.orm.user_manager
@@ -101,4 +102,14 @@ sonata_user:
     manager_type: orm
 
 
+sonata_admin:
+    title: Sonata Admin
+    security:
+        # handler: app.security.handler.role
+        # handler: sonata.admin.security.handler.acl
+    options:
+        html5_validate: true
+        confirm_exit: true
+    templates:
+        dashboard: SonataAdminBundle:Core:dashboard.html.twig
 

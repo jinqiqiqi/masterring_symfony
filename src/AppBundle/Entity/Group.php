@@ -5,10 +5,10 @@ namespace AppBundle\Entity;
 
 // user Entity\User instead of Model\User
 use Doctrine\ORM\Mapping as ORM;
-// use FOS\UserBundle\Entity\User as BaseGroup;
 use Sonata\UserBundle\Entity\BaseGroup;
 
 /**
+ * Group
  * @ORM\Table(name="group")
  * @ORM\Entity
  */

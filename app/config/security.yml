@@ -50,7 +50,7 @@ security:
                 failure_path: null
                 # csrf_provider: security.csrf.token_manager
                 csrf_token_generator: security.csrf.token_manager
-                default_target_path: dashboard_index
+                default_target_path: sonata_admin_dashboard
             logout: true
             anonymous: true
             # anonymous: ~
@@ -63,18 +63,20 @@ security:
             #form_login: ~
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
         # admin login page needs to be accessed without credential
         - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login_check, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         
         - { path: ^/admin/, role: [ROLE_ADMIN, ROLE_SONATA_ADMIN] }
 
         - { path: ^/dashboard, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/, role: IS_AUTHENTICATED_FULLY }
 
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
         
