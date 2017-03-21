@@ -42,3 +42,7 @@ sonata_user_admin_security:
 sonata_user_admin_resetting:
     resource: "@SonataUserBundle/Resources/config/routing/admin_resetting.xml"
     prefix: /admin/resetting
+
+workspace:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix: /app
