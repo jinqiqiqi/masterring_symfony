@@ -1,0 +1,17 @@
+{# app/Resources/views/mava_base.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title 'MAVA' %}
+{% block stylesheets %}
+
+    {% if app.environment == 'prod' %}
+		{% stylesheets
+			'@bootstrap_css'
+			'@mava_css'
+			output='css/compiled/main.css' %}
+			<link rel="stylesheet" type="text/css" href="{{ asset_url }}">
+		{% endstylesheets %}
+	{% else %}
+	    
+    {% endif %}
+
+{% endblock %}
