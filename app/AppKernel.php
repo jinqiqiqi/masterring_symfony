@@ -28,6 +28,10 @@ class AppKernel extends Kernel
 
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
 
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+
             // custom bundles
             new AppBundle\AppBundle(),
         );

@@ -113,3 +113,12 @@ sonata_admin:
     templates:
         dashboard: SonataAdminBundle:Core:dashboard.html.twig
 
+assetic:
+    debug: '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+        less:
+            node: /usr/bin/node
+            node_paths: [/usr/lib/node_modules]
+            apply_to: "\.less$"
