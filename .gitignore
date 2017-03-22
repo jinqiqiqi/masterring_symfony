@@ -11,4 +11,5 @@
 /bin/
 /composer.phar
 
-tests/_output/*
+tests/_output/**.komodoproject
+*.komodoproject
