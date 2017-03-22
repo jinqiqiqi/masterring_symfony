@@ -5,13 +5,14 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
@@ -21,13 +22,37 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/top", name="top_articles")
+     * @Route("/top/{username}", name="top_articles", defaults={"username": null})
      */
-    public function topArticlesAction()
+    public function topArticlesAction(Request $request, $username)
     {
+        $session = $request->getSession();
+        $session->set('foo', 'bar');
+        $foo = $session->get('foo');
+
+        dump($foo);
+
         $articles = "11";
         return $this->render('default/top_articles.html.twig', [
-            'articles' => $articles
+            'articles' => $articles,
+            'username' => $username
         ]);
+    }
+
+    /**
+     * @Route("/raw", name="raw_response")
+     */
+    public function rawAction(Request $request)
+    {
+        return new Response("hi: ");
+    }
+
+    /**
+     * @Route("/redirect", name="redirect")
+     */
+    public function redirectAction()
+    {
+        $this->addFlash('notice', 'Congratulations, your action succeeded!');
+        return $this->redirectToRoute('top_articles', ["username" => "yolanda"]);
     }
 }

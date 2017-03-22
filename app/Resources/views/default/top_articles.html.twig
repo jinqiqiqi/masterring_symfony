@@ -1,1 +1,12 @@
-{{ articles }}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    {{ articles }} <br />
+    {{ username }}
+
+    {% for flashMessage in app.session.flashBag.get('notice') %}
+        <div class="flash-notice">{{ flashMessage }}</div>
+    {% endfor %}
+
+{% endblock %}
